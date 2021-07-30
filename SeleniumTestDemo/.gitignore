@@ -204,3 +204,4 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+SeleniumTestDemo/bin/Debug/netcoreapp3.1
