@@ -1,2 +1,3 @@
-bin* 
-[Oo]bj/
+bin/
+obj/
+
