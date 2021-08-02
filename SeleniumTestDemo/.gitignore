@@ -12,6 +12,9 @@ SeleniumTestDemo/SeleniumTestDemo/bin/Debug/netcoreapp3.1
 *.user
 *.sln.docstates
 
+/.vs/SeleniumTestDemo/v16
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -64,6 +67,7 @@ dlldata.c
 *.pidb
 *.svclog
 *.scc
+*.vs
 
 # Chutzpah Test files
 _Chutzpah*
