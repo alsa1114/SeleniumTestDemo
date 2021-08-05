@@ -2,15 +2,12 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumTestDemo.Pages;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace SeleniumTestDemo.Tests
 {
-    class LoginTest
+    public class EmployeeTest
     {
-
         IWebDriver webDriver = new ChromeDriver();
 
         [SetUp]
@@ -19,23 +16,27 @@ namespace SeleniumTestDemo.Tests
             webDriver.Navigate().GoToUrl("http://eaapp.somee.com/");
             webDriver.Manage().Window.Maximize();
         }
-
         [Test]
-        public void Login()
+        public void EmplList()
         {
-            HomePage homePage = new HomePage(webDriver);
-            homePage.ClickLogin();
+            EmployeePage page = new EmployeePage(webDriver);
+          //  HomePage homePage = new HomePage(webDriver);
+          //  Assert.That(homePage.IsEmployeeDetailsExist, Is.True);
+            page.CLickEmpList();
+            page.ClickSearchInput();
+            page.SendName();
+            page.SearchSubmit();
 
-            LoginPage loginPage = new LoginPage(webDriver);
-            loginPage.Login("admin", "password");
-            Assert.That(homePage.IsEmployeeDetailsExist, Is.True);
 
 
         }
-        [TearDown]
+        /*[TearDown]
         public void Close()
         {
             webDriver.Close();
         }
+
+    }*/
+
     }
 }
