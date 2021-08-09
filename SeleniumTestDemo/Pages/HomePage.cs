@@ -5,27 +5,23 @@ using System.Text;
 
 namespace SeleniumTestDemo.Pages
 {
-    public class HomePage
-
-
+    public class HomePage 
     {
-        public HomePage(IWebDriver webDriver)
-
+        public HomePage(IWebDriver driver)
         {
-            Driver = webDriver;
+            Driver = driver;
         }
 
-        private IWebDriver Driver { get; }
+        public IWebDriver Driver { get; }
+
 
         public IWebElement lnkLogin => Driver.FindElement(By.LinkText("Login"));
-
         public IWebElement lnkEmployeeDetails => Driver.FindElement(By.LinkText("Employee Details"));
 
-        public void ClickLogin() => lnkLogin.Click();
 
+
+        public void ClickLogin() => lnkLogin.Click();
         public bool IsEmployeeDetailsExist() => lnkEmployeeDetails.Displayed;
-            
-       
 
     }
 }

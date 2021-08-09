@@ -5,20 +5,18 @@ using System.Text;
 
 namespace SeleniumTestDemo.Pages
 {
-    class LoginPage
+    public class LoginPage
     {
         public LoginPage(IWebDriver driver)
-
         {
             Driver = driver;
         }
+        public IWebDriver Driver { get;}
 
-        public IWebDriver Driver { get; }
-
-        IWebElement txtUsername => Driver.FindElement(By.Name("UserName"));
-        IWebElement txtPassword => Driver.FindElement(By.Name("Password"));
-        IWebElement btnLogin => Driver.FindElement(By.XPath("//input[@value = 'Log in']"));   
-            
+        
+        public IWebElement txtUsername => Driver.FindElement(By.Name("UserName"));
+        public IWebElement txtPassword => Driver.FindElement(By.Name("Password"));
+        public IWebElement btnLogin => Driver.FindElement(By.XPath("//input[@value = 'Log in']"));
 
         public void Login(String userName, String password)
         {

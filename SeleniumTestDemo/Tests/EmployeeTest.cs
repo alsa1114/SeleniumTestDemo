@@ -8,35 +8,34 @@ namespace SeleniumTestDemo.Tests
 {
     public class EmployeeTest
     {
-        IWebDriver webDriver = new ChromeDriver();
+      
 
         [SetUp]
         public void Setup()
+
         {
-            webDriver.Navigate().GoToUrl("http://eaapp.somee.com/");
-            webDriver.Manage().Window.Maximize();
+            CoreTest.Initialize();
+
         }
+
         [Test]
         public void EmplList()
         {
-            EmployeePage page = new EmployeePage(webDriver);
-          //  HomePage homePage = new HomePage(webDriver);
-          //  Assert.That(homePage.IsEmployeeDetailsExist, Is.True);
+            EmployeePage page = new EmployeePage(CoreTest.driver);
+
             page.CLickEmpList();
             page.ClickSearchInput();
             page.SendName();
             page.SearchSubmit();
 
-
-
         }
-        /*[TearDown]
-        public void Close()
-        {
-            webDriver.Close();
-        }
+         [TearDown]
+          public void Close()
+          {
+              CoreTest.Close();
+          }
 
-    }*/
+      }
 
     }
-}
+

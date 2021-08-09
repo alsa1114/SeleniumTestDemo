@@ -8,34 +8,30 @@ using System.Text;
 
 namespace SeleniumTestDemo.Tests
 {
-    class LoginTest
+    public class LoginTest
     {
-
-        IWebDriver webDriver = new ChromeDriver();
 
         [SetUp]
         public void Setup()
         {
-            webDriver.Navigate().GoToUrl("http://eaapp.somee.com/");
-            webDriver.Manage().Window.Maximize();
+            CoreTest.Initialize();
         }
 
-        [Test]
-        public void Login()
+       [Test]
+        public void PageLogIn()
         {
-            HomePage homePage = new HomePage(webDriver);
+            HomePage homePage = new HomePage(CoreTest.driver);
             homePage.ClickLogin();
 
-            LoginPage loginPage = new LoginPage(webDriver);
-            loginPage.Login("admin", "password");
+            LoginPage logpage = new LoginPage(CoreTest.driver);
+            logpage.Login("admin", "password");
+
             Assert.That(homePage.IsEmployeeDetailsExist, Is.True);
-
-
+   
+           
         }
-        [TearDown]
-        public void Close()
-        {
-            webDriver.Close();
-        }
+
     }
+  
 }
+    
