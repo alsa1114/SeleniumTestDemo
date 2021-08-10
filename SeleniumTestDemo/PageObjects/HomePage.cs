@@ -19,8 +19,8 @@ namespace SeleniumTestDemo.Pages
         public IWebElement lnkEmployeeDetails => Driver.FindElement(By.LinkText("Employee Details"));
 
 
-
         public void ClickLogin() => lnkLogin.Click();
+
         public bool IsEmployeeDetailsExist() => lnkEmployeeDetails.Displayed;
 
     }

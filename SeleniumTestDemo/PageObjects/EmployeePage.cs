@@ -11,19 +11,15 @@ namespace SeleniumTestDemo.Pages
     {
             Driver = driver;
     }
-    
 
         private IWebDriver Driver { get; }
 
- 
         public IWebElement employeeList => Driver.FindElement(By.LinkText("Employee List"));
         public IWebElement search => Driver.FindElement(By.Name("searchTerm"));
         public IWebElement btnSearch => Driver.FindElement(By.XPath("//input[@value='Search']"));
-
         
 
         public void CLickEmpList() => employeeList.Click();
-
        
         public void ClickSearchInput() => search.Click();
 

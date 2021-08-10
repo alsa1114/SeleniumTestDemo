@@ -6,6 +6,7 @@ using SeleniumTestDemo.Pages;
 
 namespace SeleniumTestDemo.Tests
 {
+    [TestFixture]
     public class EmployeeTest
     {
       
@@ -29,6 +30,7 @@ namespace SeleniumTestDemo.Tests
             page.SearchSubmit();
 
         }
+       
          [TearDown]
           public void Close()
           {
