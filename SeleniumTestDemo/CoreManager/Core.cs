@@ -1,39 +1,45 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.UI;
 using System;
 
 namespace SeleniumTestDemo
 {
-    public class CoreTest
+    public class Core
     {
         public static IWebDriver driver = null;
 
-        public static void Initialize()
+        public static IWebDriver Initialize()
         {
             if (driver == null)
             {
                 driver = new ChromeDriver();
+               
+                driver.Manage().Window.Maximize();
+                
+                driver.Navigate().GoToUrl(Constants.Url);
             }
 
-            driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl(Constants.url);
+            return driver;
 
-
-        }
+        }  
+        
         public static void Quit()
         {
-            Console.WriteLine("quitting browser");
+            Console.WriteLine("quitting of Webdriver");
+
             driver.Quit();
+
             driver = null;
         }
         public static void Close()
         {
             Console.WriteLine("closing browser");
+         
             driver.Close();
+          
             driver = null;
-
         }
 
     }
+    
 }

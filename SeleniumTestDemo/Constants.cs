@@ -6,6 +6,6 @@ namespace SeleniumTestDemo
 {
     class Constants
     {
-        public static String url = "http://eaapp.somee.com/";
+        public static String Url = "http://eaapp.somee.com/";
     }
 }

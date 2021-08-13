@@ -1,42 +1,40 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using SeleniumTestDemo.Pages;
-
 
 namespace SeleniumTestDemo.Tests
 {
-    [TestFixture]
-    public class EmployeeTest
+    [Parallelizable(ParallelScope.Children)]
+   /* [TestFixture(typeof(FirefoxDriver))]
+    [TestFixture(typeof(ChromeDriver))]*/
+
+    public class EmployeeTest:Core
     {
-      
 
         [SetUp]
         public void Setup()
 
         {
-            CoreTest.Initialize();
+            Core.Initialize();
 
         }
 
         [Test]
         public void EmplList()
         {
-            EmployeePage page = new EmployeePage(CoreTest.driver);
+            EmployeePage page = new EmployeePage(Core.driver);
 
             page.CLickEmpList();
+
             page.ClickSearchInput();
+
             page.SendName();
+
             page.SearchSubmit();
 
         }
-       
-         [TearDown]
-          public void Close()
-          {
-              CoreTest.Close();
-          }
-
+      
       }
 
     }
